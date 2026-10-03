@@ -9,6 +9,7 @@ import connectDatabase from "./app/config/db.js";
 import errorHandler from "./app/middleware/errorHandler.js";
 import authRouter from "./routes/authRoutes.js";
 import riderRouter from "./routes/riderRoutes.js";
+import bookingRouter from "./routes/bookingRoutes.js";
 
 const app = express();
 
@@ -50,6 +51,7 @@ app.get("/api/v1/health", (_req, res) => {
 // API routes
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/rider", riderRouter);
+app.use("/api/v1/bookings", bookingRouter);
 
 // 404 handler
 app.use((_req, res) => {
